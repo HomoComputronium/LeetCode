@@ -1,4 +1,4 @@
-package com.homo.computronium.leetcode.employee_free_time;
+package com.homo.computronium.leetcode.easy.employee_free_time;
 
 import java.util.Objects;
 

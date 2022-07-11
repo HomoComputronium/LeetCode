@@ -1,4 +1,4 @@
-package org.example;
+package com.homo.computronium;
 
 import static org.junit.Assert.assertTrue;
 

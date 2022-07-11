@@ -1,4 +1,4 @@
-package com.homo.computronium;
+package com.homo.computronium.leetcode;
 
 /**
  * Hello world!

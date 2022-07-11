@@ -1,7 +1,7 @@
-package org.example.leetcode;
+package com.homo.computronium.leetcode;
 
-import org.example.leetcode.employee_free_time.EmployeeFreeTime;
-import org.example.leetcode.employee_free_time.Interval;
+import com.homo.computronium.leetcode.easy.employee_free_time.EmployeeFreeTime;
+import com.homo.computronium.leetcode.easy.employee_free_time.Interval;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
