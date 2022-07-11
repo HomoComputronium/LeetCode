@@ -1,5 +1,6 @@
 package org.example.leetcode;
 
+import org.example.leetcode.employee_free_time.EmployeeFreeTime;
 import org.example.leetcode.employee_free_time.Interval;
 import org.junit.jupiter.api.Test;
 

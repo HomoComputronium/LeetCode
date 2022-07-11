@@ -1,6 +1,4 @@
-package org.example.leetcode;
-
-import org.example.leetcode.employee_free_time.Interval;
+package com.homo.computronium.leetcode.employee_free_time;
 
 import java.util.ArrayList;
 import java.util.List;
