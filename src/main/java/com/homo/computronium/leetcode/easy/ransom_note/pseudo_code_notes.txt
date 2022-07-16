@@ -1,0 +1,8 @@
+1. Build a magazineLetterCountMap and ransomNoteLetterCountMap
+2. Compare the letters
+
+
+more efficient solution
+
+1. Sort both strings alphabetically
+2. Iterate ransomNote, and remove each letter from magazine, using binary search to find the character
