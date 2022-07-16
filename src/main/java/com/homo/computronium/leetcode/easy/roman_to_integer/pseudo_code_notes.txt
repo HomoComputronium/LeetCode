@@ -1,0 +1,8 @@
+// IV
+// XXVI
+// XXXIV
+
+// 1. Iterate, convert, add to result
+// 2. Compare with prev, (beware of first iteration, prev is out of bound array)
+//     a) if prev equals or bigger -> add
+//     b) if prev smaller -> nullify previous addition, and add to result (curr - prev)
