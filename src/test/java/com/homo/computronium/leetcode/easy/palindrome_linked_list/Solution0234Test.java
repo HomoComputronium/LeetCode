@@ -6,11 +6,11 @@ import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SolutionTest {
+class Solution0234Test {
 
     @Test
     public void testIsListPalindrome() {
-        Solution solution = new Solution();
+        Solution0234 solution = new Solution0234();
 
         List<Integer> palindromeIntegers = List.of(1, 2, 2, 1);
         assertTrue(solution.isListPalindrome(palindromeIntegers));
@@ -21,7 +21,7 @@ class SolutionTest {
 
     @Test
     public void testLinkedListPalindromeCase1() {
-        Solution solution = new Solution();
+        Solution0234 solution = new Solution0234();
 //        [1,2,2,1]
         ListNode head = new ListNode(1);
         ListNode node1 = new ListNode(2);
@@ -37,7 +37,7 @@ class SolutionTest {
 
     @Test
     public void testLinkedListPalindromeCase2() {
-        Solution solution = new Solution();
+        Solution0234 solution = new Solution0234();
 //        [1,2]
         ListNode head = new ListNode(1);
         ListNode node1 = new ListNode(2);

@@ -5,11 +5,11 @@ import java.util.Map;
 
 //https://leetcode.com/problems/roman-to-integer/
 // 13. Roman to Integer
-public class Solution {
+public class Solution0013 {
 
     private final Map<String, Integer> int2string = new HashMap<>();
 
-    public Solution() {
+    public Solution0013() {
         populateMap();
     }
 

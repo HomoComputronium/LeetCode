@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class SolutionTest {
+class Solution0013Test {
 
     @Test
     public void simpleCases() {
@@ -16,7 +16,7 @@ class SolutionTest {
 //        D             500
 //        M             1000
 
-        Solution solution = new Solution();
+        Solution0013 solution = new Solution0013();
 
         assertEquals(1, solution.romanToInt("I"));
         assertEquals(5, solution.romanToInt("V"));
@@ -29,7 +29,7 @@ class SolutionTest {
 
     @Test
     public void casesWithAddingRomans() {
-        Solution solution = new Solution();
+        Solution0013 solution = new Solution0013();
 
         assertEquals(1, solution.romanToInt("I"));
         assertEquals(2, solution.romanToInt("II"));
@@ -46,7 +46,7 @@ class SolutionTest {
 
     @Test
     public void casesWithSubtractingRomans() {
-        Solution solution = new Solution();
+        Solution0013 solution = new Solution0013();
 
         assertEquals(4, solution.romanToInt("IV"));
         assertEquals(9, solution.romanToInt("IX"));
@@ -58,7 +58,7 @@ class SolutionTest {
 
     @Test
     public void nativeLeetCodeTestCases() {
-        Solution solution = new Solution();
+        Solution0013 solution = new Solution0013();
 
         assertEquals(58, solution.romanToInt("LVIII"));
         assertEquals(1994, solution.romanToInt("MCMXCIV"));

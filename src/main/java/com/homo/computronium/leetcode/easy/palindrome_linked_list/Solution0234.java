@@ -3,6 +3,8 @@ package com.homo.computronium.leetcode.easy.palindrome_linked_list;
 import java.util.ArrayList;
 import java.util.List;
 
+// 234. Palindrome Linked List
+// https://leetcode.com/problems/palindrome-linked-list/
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -13,7 +15,7 @@ import java.util.List;
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class Solution {
+class Solution0234 {
     public boolean isPalindrome(ListNode head) {
         if (head == null) {
             return false;
