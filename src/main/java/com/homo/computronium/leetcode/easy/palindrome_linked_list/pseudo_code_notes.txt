@@ -1,0 +1,6 @@
+public boolean isStringPalindrome(String string) {
+        // get string length
+        // get two frags. if even len = 4 (0,2) and (3, ..). If uneven len = 3 (0,1) and (1, ..)
+        // firstFrag = subString(0, len / 2); secondFrag = subString( len / 2);
+        // reverse secondFrag
+        // compare strings
