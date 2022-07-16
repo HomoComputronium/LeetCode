@@ -5,6 +5,8 @@ import java.util.Set;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
+// https://leetcode.com/problems/ransom-note/submissions/
+// 383. Ransom Note
 public class Solution0383 {
 
     public boolean canConstruct(String ransomNote, String magazine) {
