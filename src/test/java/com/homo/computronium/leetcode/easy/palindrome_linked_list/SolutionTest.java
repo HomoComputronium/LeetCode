@@ -2,16 +2,21 @@ package com.homo.computronium.leetcode.easy.palindrome_linked_list;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class SolutionTest {
 
     @Test
-    public void testIsStringPalindrome() {
+    public void testIsListPalindrome() {
         Solution solution = new Solution();
-        assertTrue(solution.isStringPalindrome("abba"));
-        assertTrue(solution.isStringPalindrome("abdba"));
-        assertFalse(solution.isStringPalindrome("abdvba"));
+
+        List<Integer> palindromeIntegers = List.of(1, 2, 2, 1);
+        assertTrue(solution.isListPalindrome(palindromeIntegers));
+
+        List<Integer> nonPalindromeIntegers = List.of(1, 2, 4, 5, 2, 1);
+        assertFalse(solution.isListPalindrome(nonPalindromeIntegers));
     }
 
     @Test

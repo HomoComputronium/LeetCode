@@ -1,5 +1,8 @@
 package com.homo.computronium.leetcode.easy.palindrome_linked_list;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Definition for singly-linked list.
  * public class ListNode {
@@ -15,27 +18,26 @@ class Solution {
         if (head == null) {
             return false;
         }
-        String valuesString = "";
+        List<Integer> integers = new ArrayList();
+        integers.add(head.val);
 
-        valuesString = valuesString + head.val;
         while (head.next != null) {
             head = head.next;
-            valuesString = valuesString + head.val;
+            integers.add(head.val);
         }
-        return isStringPalindrome(valuesString);
+        return isListPalindrome(integers);
     }
 
-    public boolean isStringPalindrome(String string) {
-        int middleIndex = string.length()/ 2;
-        String firstFragment = string.substring(0, getMiddleForFirstFragment(string.length()));
-        String secondFragment = string.substring(middleIndex);
-
-        secondFragment = new StringBuilder(secondFragment).reverse().toString();
-
-        return firstFragment.equals(secondFragment);
-    }
-
-    private int getMiddleForFirstFragment(int length) {
-        return length % 2 == 0 ? (length / 2) : ((length + 1) / 2);
+    public boolean isListPalindrome(List<Integer> integers) {
+        for (int i = 0; i < integers.size(); i++) {
+            Integer leftInt = integers.get(i);
+            Integer rightInt = integers.get(integers.size() - 1 - i);
+            if (leftInt.equals(rightInt)) {
+                continue;
+            } else {
+                return false;
+            }
+        }
+        return true;
     }
 }
