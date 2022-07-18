@@ -8,4 +8,4 @@ Naive solution
 TODO
 Further optimization steps
 1. Use inner class Pair with overridden compare method
-2. Use TreeSet<Pair> as an intermediary self-sorting data structure
+2. Use PriorityQueue<Pair> as an intermediary self-sorting data structure

@@ -1,19 +1,10 @@
-package com.homo.computronium.leetcode.easy.the_k_weakest_rows_in_a_matrix.naive;
+package com.homo.computronium.leetcode.easy.the_k_weakest_rows_in_a_matrix.queue;
 
 import org.junit.jupiter.api.Test;
-
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class Solution1337Test {
-
-    @Test
-    public void testCountSoldiersNum() {
-        Solution1337 solution = new Solution1337();
-
-        int[] intArray1 = {1, 1, 0};
-        assertEquals(2, solution.countSoldiersNum(intArray1));
-    }
 
     @Test
     public void testLeetCodeCase1() {
