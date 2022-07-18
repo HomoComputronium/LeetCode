@@ -1,0 +1,11 @@
+Naive solution
+
+1. get number of soldiers
+2. convert to list of pairs (soldNum, index)
+3. sort list
+4. return first n elements
+
+TODO
+Further optimization steps
+1. Use inner class Pair with overridden compare method
+2. Use TreeSet<Pair> as an intermediary self-sorting data structure
