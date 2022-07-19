@@ -3,16 +3,23 @@ package com.homo.computronium.leetcode.easy.the_k_weakest_rows_in_a_matrix.naive
 import org.junit.jupiter.api.Test;
 
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class Solution1337Test {
 
     @Test
-    public void testCountSoldiersNum() {
+    public void testCountSoldiersNum() throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         Solution1337 solution = new Solution1337();
 
         int[] intArray1 = {1, 1, 0};
-        assertEquals(2, solution.countSoldiersNum(intArray1));
+
+        Method countSoldiersNumMethod = Solution1337.class.getDeclaredMethod("countSoldiersNum", int[].class);
+        countSoldiersNumMethod.setAccessible(true);
+
+        assertEquals(2, countSoldiersNumMethod.invoke(solution, intArray1));
     }
 
     @Test

@@ -33,7 +33,7 @@ public class Solution1337 {
         return soldierCount2IndexArray;
     }
 
-    public int countSoldiersNum(int[] row) {
+    private int countSoldiersNum(int[] row) {
         int count = 0;
         for (int i = 0; i < row.length; i++) {
             if (row[i] == 1) {
