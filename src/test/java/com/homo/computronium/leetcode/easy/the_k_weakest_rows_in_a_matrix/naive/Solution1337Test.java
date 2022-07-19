@@ -50,4 +50,37 @@ class Solution1337Test {
         assertArrayEquals(expected, result);
     }
 
+    @Test
+    void playground() {
+        int result = (175 << 20) + 99;
+        System.out.println(result);
+
+        int unresult = result >> 20;
+        System.out.println(unresult);
+
+
+        int somePower = result + 99;
+
+        double log = Math.log(somePower);
+        int to20 = 1048576;
+
+        System.out.println("Division: " + somePower / to20);
+        System.out.println("Remainder: " + getIndex(somePower));
+
+        System.out.println("Log: " + log);
+        System.out.println("Power: " + calculatePower(somePower));
+    }
+
+    private static int calculatePower(int number) {
+        double log = Math.log(number) / Math.log(2);
+        System.out.println("Actual: " + log);
+        return (int) Math.round(log);
+    }
+
+    public int getIndex(int number) {
+        int soldierNumber = number / 1048576;
+
+        return number - (soldierNumber * 1048576);
+    }
+
 }
