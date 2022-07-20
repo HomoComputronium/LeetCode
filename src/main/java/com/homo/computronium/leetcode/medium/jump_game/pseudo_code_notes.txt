@@ -1,0 +1,8 @@
+
+
+[2,3,1,1,4]
+
+[3,2,1,0,4]
+
+1. Build all possibilities Tree
+2. Traverse the tree -> check at the lead node whether jump is possible or not
