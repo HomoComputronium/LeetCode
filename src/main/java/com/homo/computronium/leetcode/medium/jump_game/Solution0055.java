@@ -11,40 +11,21 @@ public class Solution0055 {
     private int len;
 
     public boolean canJump(int[] nums) {
-        Node root = buildTree(nums);
-        return traverseTree(root);
+        return buildTree(nums);
     }
 
-    public boolean traverseTree(Node node) {
-        if (node != null) {
-            if (node.getIndex() == len -1) {
-                return true;
-            }
-            List<Node> children = node.getChildren();
-            for (Node child : children) {
-                boolean isLast = traverseTree(child);
-                if (isLast) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public Node buildTree(int[] numbers) {
+    public boolean buildTree(int[] numbers) {
         this.numbers = numbers;
         len = numbers.length;
 
         Node root = new Node();
         root.setIndex(0);
-        setValue(root);
+        setRootValue(root);
 
-        createChildren(root);
-
-        return root;
+        return createChildren(root);
     }
 
-    private void setValue(Node node) {
+    private void setRootValue(Node node) {
         int index = node.getIndex();
         if (index < len){
             int value = numbers[index];
@@ -52,18 +33,27 @@ public class Solution0055 {
         }
     }
 
-    private void createChildren(Node node) {
+    private boolean createChildren(Node node) {
         int nodeValue = node.getValue();
         int nodeIndex = node.getIndex();
 
+        if (node.getIndex() == len - 1) {
+            return true;
+        }
+
         for (int i = nodeIndex + 1; i <= nodeIndex + nodeValue && i < len; i++) {
+            System.out.println(i);
             int value = numbers[i];
             Node child = new Node();
             child.setValue(value);
             child.setIndex(i);
             node.setChild(child);
-            createChildren(child);
+            boolean isLast = createChildren(child);
+            if (isLast) {
+                return true;
+            }
         }
+        return false;
     }
 
     private static class Node {
@@ -97,10 +87,6 @@ public class Solution0055 {
 
         public int getIndex() {
             return index;
-        }
-
-        public List<Node> getChildren() {
-            return children;
         }
     }
 
