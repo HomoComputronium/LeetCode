@@ -6,3 +6,8 @@
 
 1. Build all possibilities Tree
 2. Traverse the tree -> check at the lead node whether jump is possible or not
+
+
+hasArrayZeroUnjumpableGaps
+1. Iterate over the array from end to start
+2. If one or more zeros iterate to start in the inner loop with unjumpable gaps check

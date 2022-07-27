@@ -11,7 +11,37 @@ public class Solution0055 {
     private int len;
 
     public boolean canJump(int[] nums) {
-        return buildTree(nums);
+        return !hasArrayZeroUnjumpableGaps(nums) && buildTree(nums);
+    }
+
+    public boolean hasArrayZeroUnjumpableGaps(int[] numbers) {
+        int numZerosInRow = 0;
+        boolean isPrevZero = false;
+        outer: for (int i = numbers.length - 1; i >= 0; i--) {
+            int number = numbers[i];
+            if (number == 0) {
+                numZerosInRow++;
+                isPrevZero = true;
+                continue;
+            }
+            if (number != 0 && isPrevZero) {
+                isPrevZero = false;
+                int sufficientStep = numZerosInRow;
+                // check the whole array up to the start
+                for (int j = i; j >= 0; j--) {
+                    int arrayElement = numbers[j];
+                    if (arrayElement <= sufficientStep) {
+                        sufficientStep++;
+                        if (j == 0) {
+                            return true;
+                        }
+                    } else {
+                        continue outer;
+                    }
+                }
+            }
+        }
+        return false;
     }
 
     public boolean buildTree(int[] numbers) {
@@ -42,8 +72,13 @@ public class Solution0055 {
         }
 
         for (int i = nodeIndex + 1; i <= nodeIndex + nodeValue && i < len; i++) {
-            System.out.println(i);
             int value = numbers[i];
+            if (value == 0) {
+                if (i == len - 1) {
+                    return true;
+                }
+                break;
+            }
             Node child = new Node();
             child.setValue(value);
             child.setIndex(i);
