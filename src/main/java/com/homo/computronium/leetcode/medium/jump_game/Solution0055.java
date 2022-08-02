@@ -17,17 +17,44 @@ public class Solution0055 {
     public boolean hasArrayZeroUnjumpableGaps(int[] numbers) {
         int numZerosInRow = 0;
         boolean isPrevZero = false;
+        boolean isLastElementZeroCase = false;
         outer: for (int i = numbers.length - 1; i >= 0; i--) {
             int number = numbers[i];
+            if (number == 0 && i == numbers.length - 1) {
+                isLastElementZeroCase = true;
+                numZerosInRow++;
+                isPrevZero = true;
+                continue;
+            }
             if (number == 0) {
                 numZerosInRow++;
                 isPrevZero = true;
                 continue;
             }
+//            if (number != 0 && isPrevZero && isLastElementZeroCase) {
+//                isPrevZero = false;
+//                int sufficientStep = numZerosInRow - 1;
+//                // check the whole array up to the start
+//                for (int j = i; j >= 0; j--) {
+//                    int arrayElement = numbers[j];
+//                    if (arrayElement <= sufficientStep) {
+//                        sufficientStep++;
+//                        if (j == 0 && isLastElementZeroCase) {
+//
+//                        }
+//                        if (j == 0) {
+//                            return true;
+//                        }
+//                    } else {
+//                        isLastElementZeroCase = false;
+//                        continue outer;
+//                    }
+//                }
+//            }
             if (number != 0 && isPrevZero) {
                 isPrevZero = false;
                 int sufficientStep = numZerosInRow;
-                // check the whole array up to the start
+                // check the whole array from end up to the start
                 for (int j = i; j >= 0; j--) {
                     int arrayElement = numbers[j];
                     if (arrayElement <= sufficientStep) {
