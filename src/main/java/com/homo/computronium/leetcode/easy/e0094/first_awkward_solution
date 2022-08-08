@@ -1,0 +1,73 @@
+//    public List<Integer> inorderTraversal(TreeNode root) {
+//        List<Integer> valueList = new ArrayList<>();
+//        if (Objects.isNull(root)) {
+//            return valueList;
+//        }
+//
+//        Map<TreeNode, TreeNode> node2parent = new HashMap<>();
+//        node2parent.put(root, null);
+//
+//        TreeNode leftLeaf = getLeftLeaf(root, node2parent);
+//        return handleLeftLeaf(leftLeaf, node2parent, valueList);
+//    }
+//
+//    private List<Integer> handleLeftLeaf(
+//            TreeNode leftLeaf,
+//            Map<TreeNode, TreeNode> node2parent,
+//            List<Integer> valueList
+//    ) {
+//        valueList.add(leftLeaf.val);
+//
+//        TreeNode parent = node2parent.get(leftLeaf);
+//        if (Objects.isNull(parent)) {
+////            System.out.println("Parent");
+//        }
+//        valueList.add(parent.val);
+//
+//        TreeNode rightNode = parent.right;
+//        if (!isLeaf(rightNode)) {
+//            TreeNode nextLeftLeaf = getLeftLeaf(rightNode, node2parent);
+//            return handleLeftLeaf(nextLeftLeaf, node2parent, valueList);
+//        } else {
+//            return handleRightNode(node2parent, valueList, parent, rightNode);
+//        }
+//    }
+//
+//    private List<Integer> handleRightNode(
+//            Map<TreeNode, TreeNode> node2parent,
+//            List<Integer> valueList,
+//            TreeNode parent,
+//            TreeNode rightNode
+//    ) {
+//        valueList.add(rightNode.val);
+//        TreeNode grandParent = node2parent.get(parent);
+//        if (Objects.isNull(grandParent)) {
+//            return valueList;
+//        }
+//        valueList.add(grandParent.val);
+//        if (Objects.isNull(grandParent)) {
+//            return valueList;
+//        } else {
+//            TreeNode rightNodeOfParent = grandParent.right;
+//            return handleRightNode(node2parent, valueList, grandParent, rightNodeOfParent);
+//        }
+//    }
+//
+//    private TreeNode getLeftLeaf(TreeNode node, Map<TreeNode, TreeNode> node2parent) {
+//        if (Objects.isNull(node)) {
+//            return node;
+//        }
+//        TreeNode leftNode = node.left;
+//        node2parent.put(leftNode, node);
+//        if (isLeaf(leftNode)) {
+//            return leftNode;
+//        }
+//        return getLeftLeaf(leftNode, node2parent);
+//    }
+//
+//    private boolean isLeaf(TreeNode node) {
+//        if (Objects.isNull(node)) {
+//            return false;
+//        }
+//        return Objects.isNull(node.left) && Objects.isNull(node.right);
+//    }
