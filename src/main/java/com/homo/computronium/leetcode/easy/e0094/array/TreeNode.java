@@ -1,4 +1,4 @@
-package com.homo.computronium.leetcode.easy.e0094;
+package com.homo.computronium.leetcode.easy.e0094.array;
 
 public class TreeNode {
     int val;

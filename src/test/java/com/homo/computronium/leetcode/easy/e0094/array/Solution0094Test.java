@@ -1,13 +1,11 @@
-package com.homo.computronium.leetcode.easy.e0094;
+package com.homo.computronium.leetcode.easy.e0094.array;
 
-import com.homo.computronium.leetcode.easy.e0094.naive.Solution0094;
-import com.homo.computronium.leetcode.easy.e0094.naive.TreeNode;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class Solution0094Test {
 
@@ -52,4 +50,5 @@ class Solution0094Test {
 
         assertEquals(expectedList, solution.inorderTraversal(root));
     }
+
 }

@@ -1,0 +1,4 @@
+
+
+Find an intersection of all subarrays
+
