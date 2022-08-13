@@ -1,0 +1,12 @@
+
+
+1. loop and get trust[0] list -> trustingList.doesNotContain(judge)
+2. loop and get trust[1] list -> trustedList.contains(judge);
+
+3. get initial candidate list >>> trustedList.forEach(trusted -> {
+    trustingList.doesNotContain(judge)
+
+})
+
+4. Check if every candidate satisfied two conditions:
+    1. everbody ( range(1 to n).exlude possible judge) trusts judge - all combinations arr{nonJudge, judge) are present in the town
