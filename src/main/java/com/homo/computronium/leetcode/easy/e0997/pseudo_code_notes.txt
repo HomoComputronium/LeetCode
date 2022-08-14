@@ -10,3 +10,8 @@
 
 4. Check if every candidate satisfied two conditions:
     1. everbody ( range(1 to n).exlude possible judge) trusts judge - all combinations arr{nonJudge, judge) are present in the town
+
+
+    FURTHER OPTIMIZATON STEPS
+
+

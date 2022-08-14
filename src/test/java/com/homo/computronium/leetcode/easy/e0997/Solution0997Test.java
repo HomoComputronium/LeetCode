@@ -1,7 +1,6 @@
 package com.homo.computronium.leetcode.easy.e0997;
 
 import org.junit.jupiter.api.Test;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class Solution0997Test {
@@ -62,11 +61,6 @@ class Solution0997Test {
                 {2,3}
         };
         assertEquals(-1, solution.findJudge(4, trust));
-
-
-//        4
-//                [[1,3],[1,4],[2,3]]
-
     }
 
 }

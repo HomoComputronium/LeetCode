@@ -1,8 +1,7 @@
 package com.homo.computronium.leetcode.easy.e0997;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -22,49 +21,57 @@ public class Solution0997 {
             return -1;
         }
 
-        Set<Integer> trustingPeople = Arrays.stream(trust)
-                .map(trustPair -> trustPair[0])
-                .collect(Collectors.toSet());
+        Set<Integer> trustingPeople = new HashSet<>();
+        Set<Integer> trustedPeople = new HashSet<>();
 
-        Set<Integer> trustedPeople = Arrays.stream(trust)
-                .map(trustPair -> trustPair[1])
-                .collect(Collectors.toSet());
+        for (int[] trustPair : trust) {
+            trustingPeople.add(trustPair[0]);
+            trustedPeople.add(trustPair[1]);
+        }
 
         List<Integer> possibleJudgesList = trustedPeople.stream()
                 .filter(possibleJudge -> !trustingPeople.contains(possibleJudge))
                 .toList();
 
-        Map<Integer, List<Integer>> person2trusters = buildPerson2Trusters(trust);
+        Map<Integer, Set<Integer>> person2trusters = buildPerson2Trusters(trust, possibleJudgesList);
 
         for (Integer candidate : possibleJudgesList) {
             if (doesEverybodyTrustCandidate(n, candidate, person2trusters)) {
                 return candidate;
             }
         }
-
         return -1;
     }
 
-    private boolean doesEverybodyTrustCandidate(int population, int candidate, Map<Integer, List<Integer>> person2trusters) {
+    private boolean doesEverybodyTrustCandidate(
+            int population,
+            int candidate,
+            Map<Integer, Set<Integer>> person2trusters
+    ) {
+        Set<Integer> townExceptJudgeList = IntStream.rangeClosed(1, population)
+                .boxed()
+                .filter(integer -> integer != candidate)
+                .collect(Collectors.toSet());
 
-
-        List<Integer> townExceptJudgeList = IntStream.rangeClosed(1, population)
-                .mapToObj(integer -> integer)
-                .filter(integer -> integer != candidate).toList();
-
-        List<Integer> trusterList = person2trusters.get(candidate);
-        if (Objects.isNull(trusterList)) {
+        Set<Integer> trusterSet = person2trusters.get(candidate);
+        if (Objects.isNull(trusterSet)) {
             return false;
         }
-        return trusterList.containsAll(townExceptJudgeList);
+        return trusterSet.equals(townExceptJudgeList);
     }
 
-    private Map<Integer, List<Integer>> buildPerson2Trusters(int[][] trust) {
-        Map<Integer, List<Integer>> person2trusters = new HashMap<>();
+    private Map<Integer, Set<Integer>> buildPerson2Trusters(
+            int[][] trust, List<Integer> possibleJudgesList
+    ) {
+        Map<Integer, Set<Integer>> person2trusters = new HashMap<>();
 
-        for (int[] trustPair : trust) {
-            person2trusters.computeIfAbsent(trustPair[1], list -> new ArrayList<>())
-                    .add(trustPair[0]);
+        for (Integer possibleJudge : possibleJudgesList) {
+            for (int[] trustPair : trust) {
+                if (trustPair[1] == possibleJudge) {
+                    person2trusters.computeIfAbsent(trustPair[1], set -> new HashSet<>())
+                            .add(trustPair[0]);
+                }
+            }
         }
         return person2trusters;
     }
