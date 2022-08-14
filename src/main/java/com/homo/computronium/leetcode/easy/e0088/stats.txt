@@ -1,1 +1,6 @@
 7 mins
+
+faster than 5.65%
+faster than 17.17% (Priority Queue solution)
+faster than 100.00% (Manual sort)
+
