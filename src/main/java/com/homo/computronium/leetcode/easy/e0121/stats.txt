@@ -1,2 +1,2 @@
 So far 32,5 min (naive time limit exceeded)
-27,5 min (linear - 4 ms, faster than 32.47% )
+27,5 min more (linear - 4 ms, faster than 32.47% )
