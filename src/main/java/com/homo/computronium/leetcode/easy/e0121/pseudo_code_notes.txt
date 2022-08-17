@@ -1,0 +1,43 @@
+
+
+[7,1,5,3,6,4]
+
+[7,3,6,4,3,1]
+
+
+
+Naive n^2 way
+
+1. Loop thru the array
+2. On every iteration loop in the inner loop to the array's end
+3. Compare diffs of the first element of second loop with every other.
+4. Return the biggest
+
+AND HAPPILY GET Time Limit Exceeded :)
+
+
+Linear way
+
+1. Loop array from end to start
+2. Remember the first point as the highest
+3. if the next goes up rewrite the highest
+4. if the next goes down remember as the lowest
+5. Calculate the diff (highest - lowest)
+6. if goes up compare with the highest ->
+        1) smaller - do nothing
+        2) bigger - rewrite the highest, set lowest to 0,
+
+
+7,1,5,3,6,4
+
+
+
+
+1 9 4 7 2 5 2 3 1
+
+1, 9, 4, 7, 2, 5, 2, 3, 1
+
+
+
+
+
